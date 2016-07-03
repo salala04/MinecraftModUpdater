@@ -58,6 +58,10 @@
             this.branchText = new System.Windows.Forms.Label();
             this.updateBtn = new System.Windows.Forms.Button();
             this.checkUpdateButton = new System.Windows.Forms.Button();
+            this.updateCheckTimer = new System.Windows.Forms.Timer(this.components);
+            this.logListBox = new System.Windows.Forms.ListBox();
+            this.logListBoxLabel = new System.Windows.Forms.Label();
+            this.updateNotifyLabel = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.settingGroupBox.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -311,7 +315,7 @@
             // 
             // updateBtn
             // 
-            this.updateBtn.Location = new System.Drawing.Point(395, 312);
+            this.updateBtn.Location = new System.Drawing.Point(407, 312);
             this.updateBtn.Name = "updateBtn";
             this.updateBtn.Size = new System.Drawing.Size(65, 20);
             this.updateBtn.TabIndex = 15;
@@ -321,7 +325,7 @@
             // 
             // checkUpdateButton
             // 
-            this.checkUpdateButton.Location = new System.Drawing.Point(324, 312);
+            this.checkUpdateButton.Location = new System.Drawing.Point(336, 312);
             this.checkUpdateButton.Name = "checkUpdateButton";
             this.checkUpdateButton.Size = new System.Drawing.Size(65, 20);
             this.checkUpdateButton.TabIndex = 16;
@@ -329,11 +333,47 @@
             this.checkUpdateButton.UseVisualStyleBackColor = true;
             this.checkUpdateButton.Click += new System.EventHandler(this.checkUpdateButton_Click);
             // 
+            // updateCheckTimer
+            // 
+            this.updateCheckTimer.Interval = 1000;
+            this.updateCheckTimer.Tick += new System.EventHandler(this.updateCheckTimer_Tick);
+            // 
+            // logListBox
+            // 
+            this.logListBox.ItemHeight = 12;
+            this.logListBox.Location = new System.Drawing.Point(13, 340);
+            this.logListBox.Name = "logListBox";
+            this.logListBox.Size = new System.Drawing.Size(459, 136);
+            this.logListBox.TabIndex = 17;
+            // 
+            // logListBoxLabel
+            // 
+            this.logListBoxLabel.AutoSize = true;
+            this.logListBoxLabel.Font = new System.Drawing.Font("MS UI Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.logListBoxLabel.Location = new System.Drawing.Point(11, 326);
+            this.logListBoxLabel.Name = "logListBoxLabel";
+            this.logListBoxLabel.Size = new System.Drawing.Size(43, 11);
+            this.logListBoxLabel.TabIndex = 18;
+            this.logListBoxLabel.Text = "ログ出力";
+            // 
+            // updateNotifyLabel
+            // 
+            this.updateNotifyLabel.AutoSize = true;
+            this.updateNotifyLabel.Location = new System.Drawing.Point(270, 316);
+            this.updateNotifyLabel.Name = "updateNotifyLabel";
+            this.updateNotifyLabel.Size = new System.Drawing.Size(35, 12);
+            this.updateNotifyLabel.TabIndex = 19;
+            this.updateNotifyLabel.Text = "label1";
+            this.updateNotifyLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(483, 355);
+            this.ClientSize = new System.Drawing.Size(483, 488);
+            this.Controls.Add(this.updateNotifyLabel);
+            this.Controls.Add(this.logListBoxLabel);
+            this.Controls.Add(this.logListBox);
             this.Controls.Add(this.checkUpdateButton);
             this.Controls.Add(this.updateBtn);
             this.Controls.Add(this.settingGroupBox);
@@ -341,6 +381,7 @@
             this.Controls.Add(this.addSectionBtn);
             this.Controls.Add(this.sectionComboBox);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.Text = "ModUpdater";
@@ -385,6 +426,10 @@
         private System.Windows.Forms.TextBox branchTextBox;
         private System.Windows.Forms.Label branchText;
         private System.Windows.Forms.Button checkUpdateButton;
+        private System.Windows.Forms.Timer updateCheckTimer;
+        private System.Windows.Forms.ListBox logListBox;
+        private System.Windows.Forms.Label logListBoxLabel;
+        private System.Windows.Forms.Label updateNotifyLabel;
     }
 }
 

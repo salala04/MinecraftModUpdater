@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddSectionForm));
             this.closeBtn = new System.Windows.Forms.Button();
             this.comfirmBtn = new System.Windows.Forms.Button();
             this.sectionTextBox = new System.Windows.Forms.TextBox();
@@ -91,6 +92,7 @@
             this.Controls.Add(this.closeBtn);
             this.Controls.Add(this.sectionTextBox);
             this.Controls.Add(this.attentionLabel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddSectionForm";
             this.Text = "設定名編集";
             this.ResumeLayout(false);
